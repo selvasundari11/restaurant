@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookMyTable UI Clone</title>
+  <link rel="stylesheet" href="css/styles.css">
+<style>
+    .help-section {
+        max-width: 700px;
+        margin: auto;
+        background: #f4ecd9;
+        border-radius: 12px;
+        box-shadow: 0 3px 16px #e5dac0;
+        font-family: 'Poppins', Arial, sans-serif;
+        padding: 12px 18px 32px 18px;
+      }
+      
+      .help-title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin: 16px 0 10px 0;
+      }
+      
+      .help-desc {
+        text-align: center;
+        font-size: 15px;
+        color: #25231e;
+        padding: 0 4px 14px 4px;
+        line-height: 1.6;
+        margin-bottom: 8px;
+      }
+      
+      .help-img-row {
+        width: 100%;
+        margin: 0 auto 16px auto;
+      }
+      
+      .help-img-row img {
+        width: 100%;
+        border-radius: 7px;
+        object-fit: cover;
+        box-shadow: 0 2px 8px #d6c7ad;
+      }
+      
+      .help-contacts {
+        display: flex;
+        gap: 26px;
+        justify-content: space-between;
+        background: #fff4e5;
+        border-radius: 12px;
+        padding: 24px 16px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
+      
+      .contact-col {
+        flex: 1;
+        min-width: 170px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        font-size: 15px;
+        color: #25231e;
+      }
+      
+      .logo {
+        font-weight: 600;
+        font-size: 17px;
+        color: #ba8850;
+        letter-spacing: 2px;
+      }
+      .logo em {
+        font-style: normal;
+        color: #726041;
+      }
+      .office-title {
+        font-weight: 500;
+        margin: 12px 0 2px 0;
+        font-size: 15px;
+        color: #645c47;
+      }
+      address {
+        font-style: normal;
+        color: #25231e;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      
+      .branch-manager strong,
+      .branch-supervisor strong,
+      .branch-director strong {
+        font-weight: 600;
+        font-size: 15px;
+        color: #726041;
+      }
+      
+      @media (max-width: 650px) {
+        .help-section {
+          padding: 9px 5px 20px 5px;
+        }
+        .help-title {
+          font-size: 16px;
+          margin-bottom: 7px;
+        }
+        .help-desc {
+          font-size: 13px;
+          padding: 0 0 10px 0;
+        }
+        .help-contacts {
+          gap: 12px;
+          padding: 13px 4px;
+          flex-direction: column;
+        }
+        .contact-col {
+          min-width: 0;
+          gap: 12px;
+          font-size: 13px;
+        }
+        .help-img-row {
+          margin-bottom: 7px;
+        }
+      }
+      
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <span>
+      <span class="logo"><span class="book-text">Book</span><em>mytable</em></span>
+
+      <div class="brand-desc">Never wait for your meal</div>
+    </span>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="reservation.html">Reservation</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="contactus.html">Contact us</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+ 
+   
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search" />
+      <button onclick="alert('Searching for: ' + document.getElementById('searchInput').value)">
+        🔍
+      </button>
+    </div>
+
+   
+      <span class="icon-bell">🔔</span>
+     
+      <a href="contactus.html" class="icon-contact" title="Contact Us">📞</a>
+
+      <a href="heart.html"><span class="icon-heart">❤️</span></a>
+
+      <span class="icon-profile"><img src="images/Photo by Dani.png" alt="Profile" style="width:30px;height:30px;border-radius:50%;vertical-align:middle;"></span>
+    </div>
+
+    </div>
+  </nav>
+<!-- Need Help Section -->
+<div class="help-section">
+    <h2 class="help-title">Need Help</h2>
+    <div class="help-desc">
+      We're here to help you with bookings, information, payments, or anything related to your Table Reservation experience. Reach out to us via phone, email, or chat — our support team is ready to assist you and make your food smooth and enjoyable.
+    </div>
+    <div class="help-img-row">
+      <img src="images/help.jpeg" alt="Support Staff" />
+    </div>
+    <div class="help-contacts">
+      <div class="contact-col">
+        <div class="head-office">
+          <span class="logo">Book<em>my</em>table</span>
+          <div class="office-title">Head Office</div>
+          <address>
+            123 Green Wheels Avenue<br/>
+            EcoCity, New Delhi – 110001,<br/>
+            India
+          </address>
+        </div>
+        <div class="branch-manager">
+          <strong>Branch Manager</strong><br/>
+          WhatsApp: +91 98765 43210
+        </div>
+      </div>
+      <div class="contact-col">
+        <div>
+          <strong>Branch Email Id</strong><br/>
+          Email: support@bookmytable.com<br/>
+          support@bookmytable.com<br/>
+          support@bookmytable.com
+        </div>
+      </div>
+      <div class="contact-col">
+        <div class="branch-supervisor">
+          <strong>Branch Supervisor</strong><br/>
+          ContactNumber<br/>
+          +919876543210
+        </div>
+        <div class="branch-director" style="margin-top:1em;">
+          <strong>Branch Director</strong><br/>
+          ContactNumber<br/>
+          +918933473494
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-section">
+    <div class="footer-links-grid">
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Customer Reviews</li>
+          <li>Add Your Restaurant</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policy Info</h4>
+        <ul>
+          <li>Terms & Conditions</li>
+          <li>Cookies Policy</li>
+          <li>Cancellation Policy</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cities</h4>
+        <ul>
+          <li>Chennai</li>
+          <li>Bangalore</li>
+          <li>Hyderabad</li>
+          <li>Mumbai</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li>Booking Status</li>
+          <li>Add Restaurant</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-location-links">
+      <span>Restaurant in Chennai</span>
+      <span>Restaurant in Bangalore</span>
+      <span>Restaurant in Hyderabad</span>
+      <span>Restaurant in Mumbai</span>
+      <span>Restaurant in Pune</span>
+      <span>Restaurant in Kolkata</span>
+    </div>
+    <div class="footer-bottom-bar">
+      <span>&copy; 2025 Book My Table.Co.in. All rights reserved.</span>
+      <span class="footer-bottom-contacts">
+        <span>&#128222; (123) 8940-985498</span>
+        <span>&#9993; Info@Bookmytable.com</span>
+        <span>&#127968; Chennai 54375387</span>
+      </span>
+      <span class="footer-bottom-social">
+        <a href="#"><img src="images/facebook.jpeg" class="footer-social-icon" alt="Facebook" /></a>
+        <a href="#"><img src="images/twitter.png" class="footer-social-icon" alt="Twitter" /></a>
+        <a href="#"><img src="images/instragram.jpeg" class="footer-social-icon" alt="Instagram" /></a>
+      </span>
+    </div>
+  </footer>
+
+
+</body>
+</html>

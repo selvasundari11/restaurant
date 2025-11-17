@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookMyTable UI Clone</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <span>
+      <span class="logo"><span class="book-text">Book</span><em>mytable</em></span>
+
+      <div class="brand-desc">Never wait for your meal</div>
+    </span>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="reservation.html">Reservation</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="contactus.html">Contact us</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search" />
+      <button onclick="alert('Searching for: ' + document.getElementById('searchInput').value)">
+        🔍
+      </button>
+    </div>
+
+    <!-- Register Button -->
+    <button class="register-btn" id="registerBtn">Register</button>
+
+    <!-- Container for icons after login -->
+    <div class="icon-row" id="iconRow" style="display:none;">
+      <span class="icon-bell">🔔</span>
+      <!-- <span class="icon-contact">📞</span> -->
+      <a href="contactus.html" class="icon-contact" title="Contact Us">📞</a>
+
+      <a href="heart.html"><span class="icon-heart">❤️</span></a>
+
+      <span class="icon-profile"><img src="images/Photo by Dani.png" alt="Profile" style="width:30px;height:30px;border-radius:50%;vertical-align:middle;"></span>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="register-modal" id="registerModal" style="display:none;">
+      <div class="register-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2 class="register-title">Register Free !</h2>
+
+        <form class="register-form">
+          <input type="email" placeholder="Enter your e-mail" class="register-input" />
+          <input type="password" placeholder="Password" class="register-input" />
+          <button type="submit" class="login-btn" id="loginBtn">Login</button>
+        </form>
+
+        <div class="reg-links">
+          <a href="#" class="forgot">Forget your password?</a>
+        </div>
+
+        <div class="divider-row">
+          <hr /><span>Sign Up Using</span><hr />
+        </div>
+        <div class="social-box">
+          <a href="#"><span class="social-icon">🌐</span></a>
+          <a href="#"><span class="social-icon">🔵</span></a>
+          <a href="#"><span class="social-icon">📸</span></a>
+          <a href="#"><span class="social-icon">🐦</span></a>
+        </div>
+        <div class="account-links">
+          <span>Don't have an account ?</span>
+          <a href="#" class="create-account">Create New Account</a>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Book Table at your favourite restaurant and get served instantly</h1>
+      </div>
+    </section>
+
+    <section class="city-slider-section">
+      <h2>Explore restaurant your city</h2>
+      <div class="slider-wrapper">
+        <div class="slider-track">
+          <div class="city-card">
+            <img src="images/chennai.png" alt="Chennai" />
+            <p>Chennai</p>
+          </div>
+          <div class="city-card">
+            <img src="images/hyderabed.png" alt="Bangalore" />
+            <p>Bangalore</p>
+          </div>
+          <div class="city-card">
+            <img src="images/mumbai.png" alt="Mumbai" />
+            <p>Mumbai</p>
+          </div>
+          <div class="city-card">
+            <img src="images/hyderabed.png" alt="Hyderabad" />
+            <p>Hyderabad</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works-section">
+      <h2>How it works</h2>
+      <div class="how-it-works">
+        <div class="how-card">
+          <span class="how-icon">&#128269;</span>
+          <span class="how-title">Search restaurant</span>
+        </div>
+        <div class="how-card">
+          <span class="how-icon">&#128197;</span>
+          <span class="how-title">Select date/time</span>
+        </div>
+        <div class="how-card">
+          <span class="how-icon">&#128719;</span>
+          <span class="how-title">Reserve your table</span>
+        </div>
+        <div class="how-card">
+          <span class="how-icon">&#127860;</span>
+          <span class="how-title">Get served instantly</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="customer-bg-section">
+      <div class="customer-bg-image">
+        <h2 class="customer-heading">Customer Reviews</h2>
+      </div>
+      <div class="customer-reviews">
+        <div class="review-card">
+          <img class="review-avatar" src="images/Photo by Patrick T'Kindt.png" alt="Aman p." />
+          <div class="review-name">Aman p.</div>
+          <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <div class="review-text">Great and excellent service</div>
+        </div>
+        <div class="review-card">
+          <img class="review-avatar" src="images/Photo by Lesly Juarez.png" alt="David.p" />
+          <div class="review-name">David.p</div>
+          <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <div class="review-text">Great and excellent service</div>
+        </div>
+        <div class="review-card">
+          <img class="review-avatar" src="images/Photo by H Liu.png" alt="Gopi.p" />
+          <div class="review-name">Gopi.p</div>
+          <div class="review-stars">&#11088;&#11088;&#11088;&#11088;</div>
+          <div class="review-text">Flexible Service</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-map-section">
+      <div class="newsletter-map-flex">
+        <div class="map-info">
+          <img src="images/ChatGPT Image Jul 2, 2025, 06_41_54 PM 1.png" alt="Map location" class="map-img" />
+          <ul class="contact-list">
+            <li>&#128222; (123) 8940-985498</li>
+            <li>&#9993; Info@Bookmytable.com</li>
+            <li>&#127968; Chennai 54375387</li>
+          </ul>
+        </div>
+        <div class="newsletter-box">
+          <h3>Get offers in Your Inbox</h3>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Enter your mail" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-section">
+    <div class="footer-links-grid">
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Customer Reviews</li>
+          <li>Add Your Restaurant</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policy Info</h4>
+        <ul>
+          <li>Terms & Conditions</li>
+          <li>Cookies Policy</li>
+          <li>Cancellation Policy</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cities</h4>
+        <ul>
+          <li>Chennai</li>
+          <li>Bangalore</li>
+          <li>Hyderabad</li>
+          <li>Mumbai</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li>Booking Status</li>
+          <li>Add Restaurant</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-location-links">
+      <span>Restaurant in Chennai</span>
+      <span>Restaurant in Bangalore</span>
+      <span>Restaurant in Hyderabad</span>
+      <span>Restaurant in Mumbai</span>
+      <span>Restaurant in Pune</span>
+      <span>Restaurant in Kolkata</span>
+    </div>
+    <div class="footer-bottom-bar">
+      <span>&copy; 2025 Book My Table.Co.in. All rights reserved.</span>
+      <span class="footer-bottom-contacts">
+        <span>&#128222; (123) 8940-985498</span>
+        <span>&#9993; Info@Bookmytable.com</span>
+        <span>&#127968; Chennai 54375387</span>
+      </span>
+      <span class="footer-bottom-social">
+        <a href="#"><img src="images/facebook.jpeg" class="footer-social-icon" alt="Facebook" /></a>
+        <a href="#"><img src="images/twitter.png" class="footer-social-icon" alt="Twitter" /></a>
+        <a href="#"><img src="images/instragram.jpeg" class="footer-social-icon" alt="Instagram" /></a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    // Open register modal
+    document.getElementById('registerBtn').onclick = function () {
+      document.getElementById('registerModal').style.display = 'block';
+    };
+
+    // Close register modal
+    document.getElementById('closeModal').onclick = function () {
+      document.getElementById('registerModal').style.display = 'none';
+    };
+
+    // Login button action (swap Register button with icons)
+    document.getElementById('loginBtn').onclick = function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Hide modal
+      document.getElementById('registerModal').style.display = 'none';
+
+      // Hide Register button, show icons row
+      document.getElementById('registerBtn').style.display = 'none';
+      document.getElementById('iconRow').style.display = 'flex';
+    };
+
+    // City slider functionality
+    const track = document.querySelector('.slider-track');
+    const cards = document.querySelectorAll('.city-card');
+    let current = 0;
+    const cardWidth = cards[0].offsetWidth + 22; // gap value from CSS
+
+    function slideTo(index) {
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+
+    function nextSlide() {
+      current = (current + 1) % cards.length;
+      slideTo(current);
+    }
+    setInterval(nextSlide, 2000); // Change slide every 2 seconds
+  
+
+  </script>
+</body>
+</html>

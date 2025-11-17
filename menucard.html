@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookMyTable UI Clone</title>
+  <link rel="stylesheet" href="css/styles.css">
+<style>
+    .menu-section {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        padding: 0 0 24px 0;
+        border-radius: 12px;
+      }
+      .menu-title {
+        text-align: center;
+        font-size: 1.2em;
+        letter-spacing: 0.06em;
+        font-weight: 500;
+        padding: 24px 0 10px 0;
+        color: #29221A;
+      }
+      
+      .menu-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        gap: 2px;
+        background: #f8efe2;
+      }
+      
+      .tab {
+        padding: 12px 32px;
+        font-size: 1em;
+        color: #574829;
+        background: #fff;
+        border: none;
+        border-radius: 7px 7px 0 0;
+        cursor: pointer;
+        transition: background 0.2s;
+        position: relative;
+        font-weight: 500;
+      }
+      
+      .tab.active {
+        background: #bba16c;
+        color: #fff;
+        font-weight: bold;
+      }
+      
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        padding: 16px 20px 0 20px;
+      }
+      .menu-card {
+        background: #faf7f1;
+        border-radius: 14px;
+        box-shadow: 0 2px 10px rgba(180,150,100,0.07);
+        padding-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .menu-img {
+        width: 100%;
+        height: 123px;
+        object-fit: cover;
+        border-radius: 14px 14px 0 0;
+      }
+      
+      .menu-name {
+        font-weight: 700;
+        font-size: 1.06em;
+        margin: 13px 0 3px 0;
+        color: #432e1d;
+      }
+      
+      .menu-row {
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      
+      .menu-price {
+        color: #462a12;
+        font-weight: 500;
+        font-size: 1.01em;
+      }
+      
+      .fav {
+        font-size: 1.16em;
+        color: #bca678;
+        cursor: pointer;
+      }
+      
+      .add-item {
+        width: 90%;
+        border: none;
+        border-radius: 6px;
+        background: #bba16c;
+        color: #fff;
+        font-size: 1em;
+        font-weight: 500;
+        padding: 8px 0;
+        cursor: pointer;
+        margin-top: 5px;
+        margin-bottom: 2px;
+        transition: background 0.18s;
+      }
+      
+      .add-item:hover {
+        background: #998354;
+      }
+      
+      /* Responsive Styles */
+      @media (max-width: 950px) {
+        .menu-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      @media (max-width: 650px) {
+        .menu-grid {
+          grid-template-columns: 1fr;
+          gap: 13px;
+          padding: 8px;
+        }
+        .menu-tabs .tab {
+          padding: 12px 9px;
+          font-size: 0.92em;
+        }
+        .menu-section {
+          padding: 0 0 11px 0;
+        }
+      }
+      .restaurant-detail-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.13);
+        font-family: 'Segoe UI', Arial, sans-serif;
+        overflow: hidden;
+        padding-bottom: 16px;
+      }
+      
+      .top-section {
+        display: flex;
+        background: #fff;
+      }
+      
+      .detail-image {
+        width: 42%;
+        min-width: 180px;
+        aspect-ratio: 3/2;
+        background-size: cover;
+        background-position: center;
+        border-right: 2px solid #ece7e0;
+      }
+      
+      .detail-summary {
+        flex: 1;
+        padding: 18px 14px;
+        background: #fff7e4;
+      }
+      
+      .detail-summary h2 {
+        margin: 0 0 7px 0;
+        font-size: 1.45em;
+        font-weight: bold;
+        color: #3d2a14;
+      }
+      
+      .summary-location, .summary-cuisine, .summary-cost {
+        font-size: 1.03em;
+        margin-bottom: 7px;
+        color: #524223;
+      }
+      
+      .summary-rating {
+        font-size: 1em;
+        color: #ffdb44;
+        font-weight: bold;
+        margin-top: 7px;
+      }
+      
+      .tab-section {
+        display: flex;
+        border-top: 1px solid #ece7e0;
+        border-bottom: 1px solid #ece7e0;
+      }
+      
+      .tab {
+        flex: 1;
+        text-align: center;
+        background: #fff3dc;
+        padding: 12px 0;
+        cursor: pointer;
+        color: #583d16;
+        font-size: 1em;
+        border-right: 1px solid #ece7e0;
+        transition: background 0.2s;
+      }
+      
+      .tab.active {
+        background: #fff;
+        font-weight: 500;
+      }
+      
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <span>
+      <span class="logo"><span class="book-text">Book</span><em>mytable</em></span>
+
+      <div class="brand-desc">Never wait for your meal</div>
+    </span>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="reservation.html">Reservation</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="contactus.html">Contact us</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+ 
+   
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search" />
+      <button onclick="alert('Searching for: ' + document.getElementById('searchInput').value)">
+        🔍
+      </button>
+    </div>
+
+   
+      <span class="icon-bell">🔔</span>
+     
+      <a href="contactus.html" class="icon-contact" title="Contact Us">📞</a>
+
+      <a href="heart.html"><span class="icon-heart">❤️</span></a>
+
+      <span class="icon-profile"><img src="images/Photo by Dani.png" alt="Profile" style="width:30px;height:30px;border-radius:50%;vertical-align:middle;"></span>
+    </div>
+
+    </div>
+  </nav>
+<div class="restaurant-detail-container">
+    <div class="top-section">
+      <div class="detail-image" style="background-image:url('images/Frame\ 30681.png');"></div>
+      <div class="detail-summary">
+        <h2>Grant Buffet</h2>
+        <div class="summary-location">
+          Upper Ground Floor, East court, Phoenix Market City,<br>
+          Virman nagar, Chennai...
+        </div>
+        <div class="summary-cuisine">
+          North Indian, Mohali, Italian, BBQ
+        </div>
+        <div class="summary-cost">
+          Cost for two: <b>₹1,000</b>
+        </div>
+        <div class="summary-rating">★★★★★</div>
+      </div>
+    </div>
+    <div class="tab-section">
+      <div class="tab active">Overview Restaurant</div>
+      <div class="tab">Menu Card</div>
+    </div>
+<div class="menu-section">
+    <div class="menu-title">Our Menu Card</div>
+    <div class="menu-tabs">
+      <div class="tab">Starters</div>
+      <div class="tab">Main course</div>
+      <div class="tab active">Desserts</div>
+      <div class="tab">Beverages</div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img src="images/unsplash_O-hiJTQDa0I.png" alt="Panno Catto" class="menu-img">
+        <div class="menu-name">Panno Catto</div>
+        <div class="menu-row">
+          <span class="menu-price">₹ 240</span>
+          <span class="fav">&#9825;</span>
+        </div>
+        <button class="add-item" onclick="window.location.href='heart.html'">Add Item</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/unsplash_jq02JcjxDik.png" alt="Brownie Ice" class="menu-img">
+        <div class="menu-name">Brownie Ice</div>
+        <div class="menu-row">
+          <span class="menu-price">₹ 280</span>
+          <span class="fav">&#9825;</span>
+        </div>
+        <button class="add-item">Add Item</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/unsplash_dpKWiCh7g0U.png" alt="Chesse Cake" class="menu-img">
+        <div class="menu-name">Chesse Cake</div>
+        <div class="menu-row">
+          <span class="menu-price">₹ 280</span>
+          <span class="fav">&#9825;</span>
+        </div>
+        <button class="add-item">Add Item</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/unsplash_4doynaKi3N8.png" alt="Apple Pie" class="menu-img">
+        <div class="menu-name">Apple Pie</div>
+        <div class="menu-row">
+          <span class="menu-price">₹ 240</span>
+          <span class="fav">&#9825;</span>
+        </div>
+        <button class="add-item">Add Item</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/unsplash_jKCy1UKE-4Y.png" alt="Gulab Jamun" class="menu-img">
+        <div class="menu-name">Gulab Jamun</div>
+        <div class="menu-row">
+          <span class="menu-price">₹ 240</span>
+          <span class="fav">&#9825;</span>
+        </div>
+        <button class="add-item">Add Item</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/unsplash_pkR5R4tcTq8.png" alt="Creme Bruele" class="menu-img">
+        <div class="menu-name">Creme Bruele</div>
+        <div class="menu-row">
+          <span class="menu-price">₹ 240</span>
+          <span class="fav">&#9825;</span>
+        </div>
+        <button class="add-item">Add Item</button>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-section">
+    <div class="footer-links-grid">
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Customer Reviews</li>
+          <li>Add Your Restaurant</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policy Info</h4>
+        <ul>
+          <li>Terms & Conditions</li>
+          <li>Cookies Policy</li>
+          <li>Cancellation Policy</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cities</h4>
+        <ul>
+          <li>Chennai</li>
+          <li>Bangalore</li>
+          <li>Hyderabad</li>
+          <li>Mumbai</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li>Booking Status</li>
+          <li>Add Restaurant</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-location-links">
+      <span>Restaurant in Chennai</span>
+      <span>Restaurant in Bangalore</span>
+      <span>Restaurant in Hyderabad</span>
+      <span>Restaurant in Mumbai</span>
+      <span>Restaurant in Pune</span>
+      <span>Restaurant in Kolkata</span>
+    </div>
+    <div class="footer-bottom-bar">
+      <span>&copy; 2025 Book My Table.Co.in. All rights reserved.</span>
+      <span class="footer-bottom-contacts">
+        <span>&#128222; (123) 8940-985498</span>
+        <span>&#9993; Info@Bookmytable.com</span>
+        <span>&#127968; Chennai 54375387</span>
+      </span>
+      <span class="footer-bottom-social">
+        <a href="#"><img src="images/facebook.jpeg" class="footer-social-icon" alt="Facebook" /></a>
+        <a href="#"><img src="images/twitter.png" class="footer-social-icon" alt="Twitter" /></a>
+        <a href="#"><img src="images/instragram.jpeg" class="footer-social-icon" alt="Instagram" /></a>
+      </span>
+    </div>
+  </footer>
+
+
+</body>
+</html>

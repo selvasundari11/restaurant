@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookMyTable UI Clone</title>
+  <link rel="stylesheet" href="css/styles.css">
+<style>
+    .about-section {
+        width: 100%;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background-color: #f2e8d8; /* adjust to match your design */
+        box-sizing: border-box;
+      }
+      
+      .about-text {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        color: #3a2d1f; /* dark text color, adjust as needed */
+      }
+      
+      .about-text h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      
+      .about-text .about-paragraph {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        color: #4a3c2d; /* paragraph color */
+      }
+      
+      .about-image {
+        margin-top: 30px;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+      
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+      
+      @media (max-width: 768px) {
+        .about-text h2 {
+          font-size: 1.6rem;
+        }
+        .about-text .about-paragraph {
+          font-size: 0.95rem;
+        }
+        .about-section {
+          padding: 30px 15px;
+        }
+      }
+      
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <span>
+      <span class="logo"><span class="book-text">Book</span><em>mytable</em></span>
+
+      <div class="brand-desc">Never wait for your meal</div>
+    </span>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="reservation.html">Reservation</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="contactus.html">Contact us</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+ 
+   
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search" />
+      <button onclick="alert('Searching for: ' + document.getElementById('searchInput').value)">
+        🔍
+      </button>
+    </div>
+
+   
+      <span class="icon-bell">🔔</span>
+     
+      <a href="contactus.html" class="icon-contact" title="Contact Us">📞</a>
+
+      <a href="heart.html"><span class="icon-heart">❤️</span></a>
+
+      <span class="icon-profile"><img src="images/Photo by Dani.png" alt="Profile" style="width:30px;height:30px;border-radius:50%;vertical-align:middle;"></span>
+    </div>
+
+    </div>
+  </nav>
+  
+
+<section class="about-section">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p class="about-paragraph">
+        At DineReserve we bring you a seamless dining experience by letting you reserve your favorite restaurant table with just a few clicks. Whether it’s a romantic dinner, a family celebration or a business lunch we help you skip the queue and get the best seat in the house.
+      </p>
+      <p class="about-paragraph">
+        With real-time availability, curated restaurant listings, and instant booking confirmation, dining out has never been this convenient. Our mission is simple — make every meal an occasion worth remembering.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="images/Frame 429.png" alt="Restaurant interior" />
+    </div>
+  </section>
+  <footer class="footer-section">
+    <div class="footer-links-grid">
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Customer Reviews</li>
+          <li>Add Your Restaurant</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policy Info</h4>
+        <ul>
+          <li>Terms & Conditions</li>
+          <li>Cookies Policy</li>
+          <li>Cancellation Policy</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cities</h4>
+        <ul>
+          <li>Chennai</li>
+          <li>Bangalore</li>
+          <li>Hyderabad</li>
+          <li>Mumbai</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li>Booking Status</li>
+          <li>Add Restaurant</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-location-links">
+      <span>Restaurant in Chennai</span>
+      <span>Restaurant in Bangalore</span>
+      <span>Restaurant in Hyderabad</span>
+      <span>Restaurant in Mumbai</span>
+      <span>Restaurant in Pune</span>
+      <span>Restaurant in Kolkata</span>
+    </div>
+    <div class="footer-bottom-bar">
+      <span>&copy; 2025 Book My Table.Co.in. All rights reserved.</span>
+      <span class="footer-bottom-contacts">
+        <span>&#128222; (123) 8940-985498</span>
+        <span>&#9993; Info@Bookmytable.com</span>
+        <span>&#127968; Chennai 54375387</span>
+      </span>
+      <span class="footer-bottom-social">
+        <a href="#"><img src="images/facebook.jpeg" class="footer-social-icon" alt="Facebook" /></a>
+        <a href="#"><img src="images/twitter.png" class="footer-social-icon" alt="Twitter" /></a>
+        <a href="#"><img src="images/instragram.jpeg" class="footer-social-icon" alt="Instagram" /></a>
+      </span>
+    </div>
+  </footer>
+
+
+</body>
+</html>

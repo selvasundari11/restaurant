@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookMyTable UI Clone</title>
+  <link rel="stylesheet" href="css/styles.css">
+<style>
+    .payment-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        font-family: 'Segoe UI', Arial, sans-serif;
+      }
+      .payment-header {
+        background: #bca26d;
+        color: #fff;
+        font-size: 1.33em;
+        font-weight: 600;
+        padding: 18px 0;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+      .payment-main {
+        display: flex;
+        flex-wrap: wrap;
+        background: #fcf8ef;
+      }
+      .payment-image {
+        width: 48%;
+        min-width: 230px;
+        background: #222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .payment-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: none;
+      }
+      .payment-form-container {
+        width: 52%;
+        min-width: 230px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .payment-form {
+        background: #fff;
+        border-radius: 9px;
+        padding: 36px 24px 24px 24px;
+        box-shadow: 0 0 24px #dfd4b0bb;
+        width: 96%;
+        max-width: 410px;
+      }
+      
+      .form-row {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+      .form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        font-size: 0.93em;
+        color: #937d54;
+        margin-bottom: 7px;
+      }
+      input {
+        padding: 7px 10px;
+        border: 1px solid #e0dcc5;
+        border-radius: 5px;
+        background: #fcf8ef;
+        font-size: 1em;
+        color: #544c33;
+        outline: none;
+        transition: border 0.2s;
+      }
+      input:focus {
+        border: 1.5px solid #bca26d;
+      }
+      .proceed-btn {
+        margin-top: 18px;
+        width: 120px;
+        background: #bca26d;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.08em;
+        font-weight: 600;
+        padding: 9px 0;
+        cursor: pointer;
+        float: right;
+      }
+      
+      /* Responsive styles */
+      @media (max-width: 800px) {
+        .payment-main { flex-direction: column; }
+        .payment-image,
+        .payment-form-container {
+          width: 100%;
+          min-width: unset;
+          justify-content: center;
+          padding: 0 18px 16px 18px;
+        }
+        .payment-form {
+          width: 100%;
+          max-width: 420px;
+          padding: 28px 10px 16px 10px;
+        }
+        .form-row {
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 14px;
+        }
+        .proceed-btn {
+          width: 100%;
+          float: none;
+        }
+      }
+      
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <span>
+      <span class="logo"><span class="book-text">Book</span><em>mytable</em></span>
+
+      <div class="brand-desc">Never wait for your meal</div>
+    </span>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="reservation.html">Reservation</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="contactus.html">Contact us</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+ 
+   
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search" />
+      <button onclick="alert('Searching for: ' + document.getElementById('searchInput').value)">
+        🔍
+      </button>
+    </div>
+
+   
+      <span class="icon-bell">🔔</span>
+     
+      <a href="contactus.html" class="icon-contact" title="Contact Us">📞</a>
+
+      <a href="heart.html"><span class="icon-heart">❤️</span></a>
+
+      <span class="icon-profile"><img src="images/Photo by Dani.png" alt="Profile" style="width:30px;height:30px;border-radius:50%;vertical-align:middle;"></span>
+    </div>
+
+    </div>
+  </nav>
+<div class="payment-container">
+    <div class="payment-header">
+      Payment Selection
+    </div>
+    <div class="payment-main">
+      <div class="payment-image">
+        <img src="images/unsplash_yTUYqXfIL80.png" alt="Card Swipe" />
+      </div>
+      <div class="payment-form-container">
+        <form class="payment-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Card Holder Name</label>
+              <input type="text" />
+            </div>
+            <div class="form-group">
+              <label>Card Number</label>
+              <input type="text" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Expiry Date</label>
+              <input type="text" />
+            </div>
+            <div class="form-group">
+              <label>CVV</label>
+              <input type="text" />
+            </div>
+          </div>
+          <button type="button" class="proceed-btn" id="proceedBtn">Proceed</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('proceedBtn').onclick = function() {
+      alert('Payment successful!');
+      window.location.href = 'success.html';
+    };
+  </script>
+  <footer class="footer-section">
+    <div class="footer-links-grid">
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Customer Reviews</li>
+          <li>Add Your Restaurant</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policy Info</h4>
+        <ul>
+          <li>Terms & Conditions</li>
+          <li>Cookies Policy</li>
+          <li>Cancellation Policy</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cities</h4>
+        <ul>
+          <li>Chennai</li>
+          <li>Bangalore</li>
+          <li>Hyderabad</li>
+          <li>Mumbai</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li>Booking Status</li>
+          <li>Add Restaurant</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-location-links">
+      <span>Restaurant in Chennai</span>
+      <span>Restaurant in Bangalore</span>
+      <span>Restaurant in Hyderabad</span>
+      <span>Restaurant in Mumbai</span>
+      <span>Restaurant in Pune</span>
+      <span>Restaurant in Kolkata</span>
+    </div>
+    <div class="footer-bottom-bar">
+      <span>&copy; 2025 Book My Table.Co.in. All rights reserved.</span>
+      <span class="footer-bottom-contacts">
+        <span>&#128222; (123) 8940-985498</span>
+        <span>&#9993; Info@Bookmytable.com</span>
+        <span>&#127968; Chennai 54375387</span>
+      </span>
+      <span class="footer-bottom-social">
+        <a href="#"><img src="images/facebook.jpeg" class="footer-social-icon" alt="Facebook" /></a>
+        <a href="#"><img src="images/twitter.png" class="footer-social-icon" alt="Twitter" /></a>
+        <a href="#"><img src="images/instragram.jpeg" class="footer-social-icon" alt="Instagram" /></a>
+      </span>
+    </div>
+  </footer>
+
+
+</body>
+</html>

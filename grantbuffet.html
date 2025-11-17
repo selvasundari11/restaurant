@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookMyTable UI Clone</title>
+  <link rel="stylesheet" href="css/styles.css">
+<style>
+    .restaurant-detail-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.13);
+        font-family: 'Segoe UI', Arial, sans-serif;
+        overflow: hidden;
+        padding-bottom: 16px;
+      }
+      
+      .top-section {
+        display: flex;
+        background: #fff;
+      }
+      
+      .detail-image {
+        width: 42%;
+        min-width: 180px;
+        aspect-ratio: 3/2;
+        background-size: cover;
+        background-position: center;
+        border-right: 2px solid #ece7e0;
+      }
+      
+      .detail-summary {
+        flex: 1;
+        padding: 18px 14px;
+        background: #fff7e4;
+      }
+      
+      .detail-summary h2 {
+        margin: 0 0 7px 0;
+        font-size: 1.45em;
+        font-weight: bold;
+        color: #3d2a14;
+      }
+      
+      .summary-location, .summary-cuisine, .summary-cost {
+        font-size: 1.03em;
+        margin-bottom: 7px;
+        color: #524223;
+      }
+      
+      .summary-rating {
+        font-size: 1em;
+        color: #ffdb44;
+        font-weight: bold;
+        margin-top: 7px;
+      }
+      
+      .tab-section {
+        display: flex;
+        border-top: 1px solid #ece7e0;
+        border-bottom: 1px solid #ece7e0;
+      }
+      
+      .tab {
+        flex: 1;
+        text-align: center;
+        background: #fff3dc;
+        padding: 12px 0;
+        cursor: pointer;
+        color: #583d16;
+        font-size: 1em;
+        border-right: 1px solid #ece7e0;
+        transition: background 0.2s;
+      }
+      
+      .tab.active {
+        background: #fff;
+        font-weight: 500;
+      }
+      
+      .main-content {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 22px 8px 8px 18px;
+        background: #fff;
+      }
+      
+      .left, .right {
+        flex: 1;
+        min-width: 230px;
+        padding-right: 15px;
+      }
+      
+      .left h3 {
+        font-size: 1.15em;
+        margin-bottom: 15px;
+        color: #453319;
+      }
+      
+      .row {
+        font-size: 1em;
+        margin-bottom: 13px;
+        color: #5e4e2a;
+      }
+      
+      .map-container {
+        margin-top: 15px;
+        position: relative;
+      }
+      
+      .map-container img {
+        width: 100%;
+        max-width: 230px;
+        height: auto;
+        border: 1px solid #eadfc2;
+        border-radius: 5px;
+      }
+      
+      .reserve-btn {
+        background: #9c7d43;
+        color: #fff;
+        font-weight: 500;
+        font-size: 1.05em;
+        text-align: center;
+        border-radius: 5px;
+        padding: 11px 0;
+        margin-top: 8px;
+        width: 100%;
+        max-width: 230px;
+        cursor: pointer;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 700px) {
+        .top-section, .main-content {
+          flex-direction: column;
+        }
+        .detail-image {
+          width: 100%;
+          min-width: unset;
+          aspect-ratio: unset;
+          height: 160px;
+        }
+        .main-content {
+          padding: 9px 8px 8px 8px;
+        }
+        .left, .right {
+          padding-right: 0;
+        }
+        .map-container img, .reserve-btn {
+          max-width: 100%;
+        }
+      }
+      
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <span>
+      <span class="logo"><span class="book-text">Book</span><em>mytable</em></span>
+
+      <div class="brand-desc">Never wait for your meal</div>
+    </span>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="reservation.html">Reservation</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="contactus.html">Contact us</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+ 
+   
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search" />
+      <button onclick="alert('Searching for: ' + document.getElementById('searchInput').value)">
+        🔍
+      </button>
+    </div>
+
+   
+      <span class="icon-bell">🔔</span>
+     
+      <a href="contactus.html" class="icon-contact" title="Contact Us">📞</a>
+
+      <a href="heart.html"><span class="icon-heart">❤️</span></a>
+
+      <span class="icon-profile"><img src="images/Photo by Dani.png" alt="Profile" style="width:30px;height:30px;border-radius:50%;vertical-align:middle;"></span>
+    </div>
+
+    </div>
+  </nav>
+<div class="restaurant-detail-container">
+    <div class="top-section">
+      <div class="detail-image" style="background-image:url('images/Frame\ 30681.png');"></div>
+      <div class="detail-summary">
+        <h2>Grant Buffet</h2>
+        <div class="summary-location">
+          Upper Ground Floor, East court, Phoenix Market City,<br>
+          Virman nagar, Chennai...
+        </div>
+        <div class="summary-cuisine">
+          North Indian, Mohali, Italian, BBQ
+        </div>
+        <div class="summary-cost">
+          Cost for two: <b>₹1,000</b>
+        </div>
+        <div class="summary-rating">★★★★★</div>
+      </div>
+    </div>
+    <div class="tab-section">
+      <div class="tab active">Overview Restaurant</div>
+      <div class="tab" onclick="window.location.href='menucard.html';" style="cursor: pointer;">
+        Menu Card
+      </div>
+      
+    </div>
+    <div class="main-content">
+      <div class="left">
+        <h3>Grant Buffet Overview</h3>
+        <div class="row"><b>Phone Number </b><br>3983838923</div>
+        <div class="row"><b>Cuisines</b><br>North Indian, Mohali, Italian, BBQ</div>
+        <div class="row"><b>Average Cost</b><br>₹ 1000 for two peoples (approx.)</div>
+        <div class="row"><b>Famous for</b><br>Decor, Live Music, Live Grill, Mutton RoganJosh, Naan, Dahi Vada, Salads, Kulfi, Chicken Tikka</div>
+      </div>
+      <div class="right">
+        <div class="row"><b>Opening hours</b>
+          <br>12noon – 3pm, 7pm – 11pm
+        </div>
+        <div class="row"><b>Address</b><br>Upper Ground Floor, East Court,Phoenix Market City, Virman nagar,<br>Chennai – 632088</div>
+        <div class="map-container">
+          <img src="images/ChatGPT Image Jul 2, 2025, 06_41_54 PM 1.png" alt="Map and contact" />
+          <div class="reserve-btn" onclick="window.location.href='reservenow.html'">Reserve Now</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-section">
+    <div class="footer-links-grid">
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Customer Reviews</li>
+          <li>Add Your Restaurant</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policy Info</h4>
+        <ul>
+          <li>Terms & Conditions</li>
+          <li>Cookies Policy</li>
+          <li>Cancellation Policy</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cities</h4>
+        <ul>
+          <li>Chennai</li>
+          <li>Bangalore</li>
+          <li>Hyderabad</li>
+          <li>Mumbai</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li>Booking Status</li>
+          <li>Add Restaurant</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-location-links">
+      <span>Restaurant in Chennai</span>
+      <span>Restaurant in Bangalore</span>
+      <span>Restaurant in Hyderabad</span>
+      <span>Restaurant in Mumbai</span>
+      <span>Restaurant in Pune</span>
+      <span>Restaurant in Kolkata</span>
+    </div>
+    <div class="footer-bottom-bar">
+      <span>&copy; 2025 Book My Table.Co.in. All rights reserved.</span>
+      <span class="footer-bottom-contacts">
+        <span>&#128222; (123) 8940-985498</span>
+        <span>&#9993; Info@Bookmytable.com</span>
+        <span>&#127968; Chennai 54375387</span>
+      </span>
+      <span class="footer-bottom-social">
+        <a href="#"><img src="images/facebook.jpeg" class="footer-social-icon" alt="Facebook" /></a>
+        <a href="#"><img src="images/twitter.png" class="footer-social-icon" alt="Twitter" /></a>
+        <a href="#"><img src="images/instragram.jpeg" class="footer-social-icon" alt="Instagram" /></a>
+      </span>
+    </div>
+  </footer>
+
+
+</body>
+</html>
